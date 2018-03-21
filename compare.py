@@ -1,5 +1,6 @@
 from dbconnect import db
 from capture_image import get_image
+from gul_bad_code import upload
 import boto3
 import sys
 
@@ -48,7 +49,12 @@ if __name__ == "__main__":
 	except Exception as e:
 		print ("\n:(\nFace not detected:    ",e)
 
-	print( " No match found ")
+	print( " No match found, add new user? y/n")
+
+	if(input()=='y'):
+		upload.uploadImage()
+
+
 
 
 
